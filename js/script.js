@@ -188,6 +188,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    const getResource = async (url) => {
+        const res = await fetch(url);
+
+        if (!res.ok) {
+            throw new Error(`Could not fetch ${url}, status: ${res.status}`);
+        }
+
+        return await res.json();
+    };
+
     new MenuCard(
         "img/tabs/vegy.jpg",
         "vegy",
@@ -256,12 +266,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const formData = new FormData(form);
 
-            const object = {};
-            formData.forEach(function (value, key) {
-                object[key] = value;
-            });
+            const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
-            postData('http://localhost:3000/requests', JSON.stringify(object))
+            postData('http://localhost:3000/requests', json)
                 .then(data => {
                     console.log(data);
                     showThanksModal(message.success);
