@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const element = document.createElement('div');
 
             element.classList.add('menu__item');
-
+            const convertPrice = price * 36;
             element.innerHTML = `
              <img src=${img} alt=${altimg}>
                     <h3 class="menu__item-subtitle">${title}</h3>
@@ -221,14 +221,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="menu__item-divider"></div>
                     <div class="menu__item-price">
                         <div class="menu__item-cost">Цена:</div>
-                        <div class="menu__item-total"><span>${price}</span> грн/день</div>
+                        <div class="menu__item-total"><span>${convertPrice}</span> грн/день</div>
                     </div>
             `;
 
             document.querySelector('.menu .container').append(element);
         });
     }
-
 
     // Forms
 
