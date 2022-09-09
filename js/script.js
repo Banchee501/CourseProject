@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Timer
 
 
-    const deadLine = 'September 2, 2022, 22:32:00';
+    const deadLine = 'October 30, 2022, 22:32:00';
 
     function getTimeRemaning(endtime) {
         let days, hours, minutes, seconds;
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener('scroll', showModalByScroll);
 
-    // Классы для карточек
+    // Class for card
 
     class MenuCard {
         constructor(src, alt, title, descr, price, parentSelector, ...classes) {
@@ -363,6 +363,10 @@ document.addEventListener("DOMContentLoaded", () => {
         dots.push(dot);
     }
 
+    function dotsOpacity() {
+        dots.forEach(dot => dot.style.opacity = '.5');
+        dots[slideIndex - 1].style.opacity = 1;
+    }
 
     next.addEventListener('click', () => {
         if (offset == +width.slice(0, width.length - 2) * (slides.length - 1)) {
@@ -385,8 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
             current.textContent = slideIndex;
         }
 
-        dots.forEach(dot => dot.style.opacity = '.5');
-        dots[slideIndex - 1].style.opacity = 1;
+        dotsOpacity();
     });
 
     prev.addEventListener('click', () => {
@@ -410,8 +413,7 @@ document.addEventListener("DOMContentLoaded", () => {
             current.textContent = slideIndex;
         }
 
-        dots.forEach(dot => dot.style.opacity = '.5');
-        dots[slideIndex - 1].style.opacity = 1;
+        dotsOpacity();
     });
 
     dots.forEach(dot => {
@@ -429,8 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 current.textContent = slideIndex;
             }
 
-            dots.forEach(dot => dot.style.opacity = '.5');
-            dots[slideIndex - 1].style.opacity = 1;
+            dotsOpacity();
         });
     });
 });
