@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-function cards() {
-    // Используем классы для создание карточек меню
-=======
 import { getResource } from '../services/services';
 
 function cards() {
     // Class for card
->>>>>>> 102
 
     class MenuCard {
         constructor(src, alt, title, descr, price, parentSelector, ...classes) {
@@ -17,44 +12,16 @@ function cards() {
             this.price = price;
             this.classes = classes;
             this.parent = document.querySelector(parentSelector);
-<<<<<<< HEAD
-            this.transfer = 27;
-            this.changeToUAH();
-        }
-
-        changeToUAH() {
-            this.price = this.price * this.transfer;
-=======
             this.transfer = 38;
             this.changeToUAH();
 
         }
         changeToUAH() {
             this.price = +this.price * this.transfer;
->>>>>>> 102
         }
 
         render() {
             const element = document.createElement('div');
-<<<<<<< HEAD
-
-            if (this.classes.length === 0) {
-                this.classes = "menu__item";
-                element.classList.add(this.classes);
-            } else {
-                this.classes.forEach(className => element.classList.add(className));
-            }
-
-            element.innerHTML = `
-                <img src=${this.src} alt=${this.alt}>
-                <h3 class="menu__item-subtitle">${this.title}</h3>
-                <div class="menu__item-descr">${this.descr}</div>
-                <div class="menu__item-divider"></div>
-                <div class="menu__item-price">
-                    <div class="menu__item-cost">Цена:</div>
-                    <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
-                </div>
-=======
             if (this.classes.length === 0) {
                 this.element = "menu__item";
                 element.classList.add(this.element);
@@ -70,7 +37,6 @@ function cards() {
                         <div class="menu__item-cost">Цена:</div>
                         <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
                     </div>
->>>>>>> 102
             `;
             this.parent.append(element);
         }
@@ -79,28 +45,9 @@ function cards() {
     getResource('http://localhost:3000/menu')
         .then(data => {
             data.forEach(({ img, altimg, title, descr, price }) => {
-<<<<<<< HEAD
-                new MenuCard(img, altimg, title, descr, price, ".menu .container").render();
-            });
-        });
-
-    async function getResource(url) {
-        let res = await fetch(url);
-
-        if (!res.ok) {
-            throw new Error(`Could not fetch ${url}, status: ${res.status}`);
-        }
-
-        return await res.json();
-    }
-}
-
-module.exports = cards;
-=======
                 new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
             });
         });
 }
 
 export default cards;
->>>>>>> 102

@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-window.addEventListener('DOMContentLoaded', function () {
-    const tabs = require('./modules/tabs'),
-        modal = require('./modules/modal'),
-        timer = require('./modules/timer'),
-        cards = require('./modules/cards'),
-        calc = require('./modules/calc'),
-        forms = require('./modules/forms'),
-        slider = require('./modules/slider');
-
-    tabs();
-    modal();
-    timer();
-    cards();
-    calc();
-    forms();
-    slider();
-=======
 import tabs from './modules/tabs';
 import modal from './modules/modal';
 import timer from './modules/timer';
@@ -44,5 +26,4 @@ window.addEventListener('DOMContentLoaded', function () {
         wrapper: '.offer__slider-wrapper',
         field: '.offer__slider-inner'
     });
->>>>>>> 102
 });
