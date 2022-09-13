@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function slider() {
     // Slider
 
@@ -13,6 +14,21 @@ function slider() {
         slidesWrapper = document.querySelector('.offer__slider-wrapper'),
         width = window.getComputedStyle(slidesWrapper).width,
         slidesField = document.querySelector('.offer__slider-inner');
+=======
+function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentCounter, wrapper, field }) {
+    let offset = 0;
+    let slideIndex = 1;
+
+    const slides = document.querySelectorAll(slide),
+        slider = document.querySelector(container),
+        prev = document.querySelector(prevArrow),
+        next = document.querySelector(nextArrow),
+        total = document.querySelector(totalCounter),
+        current = document.querySelector(currentCounter),
+        slidesWrapper = document.querySelector(wrapper),
+        width = window.getComputedStyle(slidesWrapper).width,
+        slidesField = document.querySelector(field);
+>>>>>>> 102
 
     if (slides.length < 10) {
         total.textContent = `0${slides.length}`;
@@ -48,7 +64,11 @@ function slider() {
         margin-right: 15%;
         margin-left: 15%;
         list-style: none;
+<<<<<<< HEAD
     `; // Если хотите - добавьте в стили, но иногда у нас нет доступа к стилям
+=======
+    `;
+>>>>>>> 102
     slider.append(indicators);
 
     for (let i = 0; i < slides.length; i++) {
@@ -151,4 +171,8 @@ function slider() {
     }
 }
 
+<<<<<<< HEAD
 module.exports = slider;
+=======
+export default slider;
+>>>>>>> 102

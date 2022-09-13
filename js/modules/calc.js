@@ -1,5 +1,9 @@
 function calc() {
+<<<<<<< HEAD
     // Calculator
+=======
+    // Calc
+>>>>>>> 102
 
     const result = document.querySelector('.calculating__result span');
 
@@ -19,6 +23,26 @@ function calc() {
         localStorage.setItem('ratio', 1.375);
     }
 
+<<<<<<< HEAD
+=======
+    function initLocalSetings(selector, activeClass) {
+        const elements = document.querySelectorAll(selector);
+
+        elements.forEach(elem => {
+            elem.classList.remove(activeClass);
+            if (elem.getAttribute('id') === localStorage.getItem('sex')) {
+                elem.classList.add(activeClass);
+            }
+            if (elem.getAttribute('data-ratio') === localStorage.getItem("ratio")) {
+                elem.classList.add(activeClass);
+            }
+        });
+    }
+
+    initLocalSetings('#gender div', 'calculating__choose-item_active');
+    initLocalSetings('.calculating__choose_big div', 'calculating__choose-item_active');
+
+>>>>>>> 102
     function calcTotal() {
         if (!sex || !height || !weight || !age || !ratio) {
             result.textContent = '____';
@@ -33,6 +57,7 @@ function calc() {
 
     calcTotal();
 
+<<<<<<< HEAD
     function initLocalSettings(selector, activeClass) {
         const elements = document.querySelectorAll(selector);
 
@@ -50,6 +75,8 @@ function calc() {
     initLocalSettings('#gender div', 'calculating__choose-item_active');
     initLocalSettings('.calculating__choose_big div', 'calculating__choose-item_active');
 
+=======
+>>>>>>> 102
     function getStaticInformation(selector, activeClass) {
         const elements = document.querySelectorAll(selector);
 
@@ -81,11 +108,21 @@ function calc() {
         const input = document.querySelector(selector);
 
         input.addEventListener('input', () => {
+<<<<<<< HEAD
             if (input.value.match(/\D/g)) {
                 input.style.border = "1px solid red";
             } else {
                 input.style.border = 'none';
             }
+=======
+
+            if (input.value.match(/\D/g)) {
+                input.style.border = '1px solid red';
+            } else {
+                input.style.border = 'none';
+            }
+
+>>>>>>> 102
             switch (input.getAttribute('id')) {
                 case "height":
                     height = +input.value;
@@ -97,15 +134,26 @@ function calc() {
                     age = +input.value;
                     break;
             }
+<<<<<<< HEAD
 
             calcTotal();
+=======
+            calcTotal();
+
+>>>>>>> 102
         });
     }
 
     getDynamicInformation('#height');
     getDynamicInformation('#weight');
     getDynamicInformation('#age');
+<<<<<<< HEAD
 
 }
 
 module.exports = calc;
+=======
+}
+
+export default calc;
+>>>>>>> 102
